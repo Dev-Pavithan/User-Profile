@@ -13,12 +13,37 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
-    margin: 10px;
+    margin: 0px;
 }
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+#sun-icon, #moon-icon {
+    font-size: 24px;
+}
+
+#moon-icon {
+    display: none;
+}
+
+body.dark-mode #moon-icon {
+    display: inline;
+}
+
+body.dark-mode #sun-icon {
+    display: none;
+}
+
+
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 60px;
+    width: 80px;
     height: 34px;
 }
 
@@ -57,7 +82,7 @@ input:checked + .toggle-label {
 }
 
 input:checked + .toggle-label:before {
-    transform: translateX(26px);
+    transform: translateX(46px);
 }
 body.dark-mode {
     --background-color: black;
@@ -109,7 +134,7 @@ tr:hover{
     color: rgb(0, 0, 0);
 }
 
-#fetch-users {
+#more-users {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: rgb(93, 93, 93);
@@ -120,18 +145,23 @@ tr:hover{
     transition: background-color 0.1s;
     box-shadow: #8d8d8d;
 }
-#fetch-users:hover {
+#more-users:hover {
     background-color: #000000;
     color: rgb(255, 255, 255);
-    box-shadow: 0px 10px 80px rgb(1, 1, 1);
+    box-shadow: 0px 10px 80px rgb(0, 0, 0);
 }
-body.dark-mode #fetch-users:hover{
+body.dark-mode #more-users:hover{
     background-color: #444;
     color: rgb(255, 255, 255);
     box-shadow: 0px 10px 80px rgb(255, 255,
     255);
 }
-#fetch-users:active {
+#more-users:active {
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 5px 20px rgb(0, 255, 200);
+    }
+body.dark-mode #more-users:active {
     background-color: aqua;
     color: rgb(0, 0, 0);
     box-shadow: 0px 5px 20px rgb(0, 255, 200);

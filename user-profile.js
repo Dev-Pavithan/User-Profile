@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const profiles = document.getElementById('profiles');
     const table = document.querySelector('#profiles-details tbody');
-    const fetchUsersButton = document.getElementById('fetch-users');
+    const moreUsersButton = document.getElementById('more-users');
 
-    const fetchUsers = async () => {
+    const moreUsers = async () => {
         try {
             const response = await fetch('https://randomuser.me/api/?results=5');
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Network Error');
             }
             const data = await response.json();
             const users = data.results;
@@ -33,15 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 table.appendChild(tableRow);
             });
         } catch (error) {
-            profiles.innerHTML = `<p>Error fetching user data: ${error.message}</p>`;
+            profiles.innerHTML = `<p>Error more user data: ${error.message}</p>`;
         }
     };
 
-    fetchUsersButton.addEventListener('click', fetchUsers);
+    moreUsersButton.addEventListener('click', moreUsers);
 
-    fetchUsers();
+    moreUsers();
 });
-
+// Dark mode
 document.addEventListener('DOMContentLoaded', () => {
     const toggleCheckbox = document.getElementById('mode-toggle');
     const currentMode = localStorage.getItem('theme') || 'light';
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('dark-mode');
         toggleCheckbox.checked = true;
     }
-    
+
     toggleCheckbox.addEventListener('change', () => {
         if (toggleCheckbox.checked) {
             document.body.classList.add('dark-mode');

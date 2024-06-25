@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profiles</title>
     <link rel="stylesheet" href="user-profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="toggle-switch">
+       <div class="toggle-switch">
         <input type="checkbox" id="mode-toggle" />
-        <label for="mode-toggle" class="toggle-label"></label>
+        <label for="mode-toggle" class="toggle-label">
+            <i id="mode-icon" class="fas fa-sun fa-2x"></i>
+        </label>
+
     </div>
 
     <div id="profiles">
@@ -26,7 +30,7 @@
 
         </tbody>
     </table>
-    <button id="fetch-users">More Users</button>
+    <button id="more-users">More Users</button>
     <script src="user-profile.js"></script>
 </body>
 </html>
